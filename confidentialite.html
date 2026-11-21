@@ -32,20 +32,36 @@
 <p>Vous pouvez rattacher votre compte de partage à Google pour le retrouver sur un nouveau téléphone. EquiRiding reçoit alors uniquement votre adresse e-mail Google, utilisée pour vous identifier. Aucun autre accès à votre compte Google n'est demandé.</p>
 
 <h2>Sauvegarde Google Drive (facultative)</h2>
-<p>Si vous l'activez, une copie de vos données est envoyée sur <strong>votre propre</strong> Google Drive, dans un dossier propre à l'application. EquiRiding n'a pas accès à ces fichiers. Les chevaux confiés en demi-pension ne sont pas sauvegardés.</p>
+<p>Si vous vous connectez avec Google pour la sauvegarde, une copie de vos données (chevaux, séances, soins, parcours, balades) est envoyée sur <strong>votre propre</strong> Google Drive, dans un dossier « EquiRiding ». Seul votre compte y a accès ; l'application ne lit ni ne modifie aucun autre fichier de votre Drive. Les chevaux confiés en demi-pension ne sont pas sauvegardés.</p>
 
 <h2>Géolocalisation</h2>
-<p>Le GPS sert uniquement au tracé des balades et à la météo locale. Les positions restent sur votre appareil et ne sont transmises à aucun tiers.</p>
+<p>L'application utilise la position de votre appareil (approximative et précise / GPS) pour afficher la météo locale, montrer votre position sur la carte et enregistrer le tracé, la distance, la vitesse, les allures et le dénivelé de vos balades. La localisation n'est utilisée que lorsque vous démarrez une balade ou consultez la météo. Les positions restent sur votre appareil et ne sont transmises à aucun tiers, sauf si vous activez le suivi en direct décrit ci-dessous.</p>
+
+<h2>Suivi en direct (demi-pension, facultatif)</h2>
+<p>Lorsqu'une demi-pension démarre une balade sur un cheval qui lui est confié, l'application lui demande si elle souhaite partager sa position avec le propriétaire du cheval. Ce partage n'a lieu qu'avec son accord explicite, qu'elle peut retirer à tout moment (au départ de chaque balade ou dans l'onglet DP). Pendant la balade, sa position précise est envoyée environ toutes les 20 secondes à nos serveurs (Supabase, hébergement dans l'Union européenne) et n'est visible que par le propriétaire de ce cheval. Un bandeau reste affiché tant que le partage est actif. Les positions sont effacées à la fin de la balade. Si la balade n'a pas été arrêtée normalement, elles ne sont plus visibles après 6 heures et sont ensuite supprimées automatiquement. Elles ne servent à aucune autre fin.</p>
+
+<h2>Suivi en arrière-plan</h2>
+<p>Pour enregistrer une balade écran éteint ou application en arrière-plan, EquiRiding utilise un service de premier plan, signalé par une notification affichée pendant toute la durée du suivi.</p>
+
+<h2>Sécurité balade (facultative)</h2>
+<p>Si vous l'activez, l'application peut détecter une immobilité prolongée et vous proposer d'alerter un contact d'urgence de votre choix. Le message, avec votre dernière position connue, est préparé dans l'application de messagerie de votre téléphone : c'est vous, ou une personne présente, qui l'envoyez. EquiRiding n'envoie aucun SMS automatiquement et ne collecte pas le contenu de ces messages. Le prénom et les contacts renseignés à cet effet restent sur votre appareil.</p>
+
+<h2>Mesure d'utilisation anonyme</h2>
+<p>À chaque ouverture, l'application envoie à notre serveur (Supabase, UE) un identifiant tiré au hasard à l'installation, sans lien avec votre identité, ainsi que la date, la version de l'application et le système (Android ou iOS). Cela sert uniquement à savoir combien de personnes reviennent dans l'application. Si vous répondez à la question « Qu'est-ce qui vous manque ? », votre réponse est envoyée avec ce même identifiant anonyme. Désinstaller l'application supprime l'identifiant.</p>
 
 <h2>Services tiers</h2>
 <ul>
 <li>Météo : Open-Meteo (aucune donnée personnelle transmise, seulement des coordonnées approximatives).</li>
 <li>Cartes : OpenStreetMap.</li>
+<li>Notifications de demi-pension : Firebase Cloud Messaging (Google), qui reçoit uniquement un identifiant technique de votre appareil et le texte de la notification.</li>
 <li>Abonnements : Google Play et App Store, selon leurs propres conditions. EquiRiding n'a pas accès à vos moyens de paiement.</li>
 </ul>
 
 <h2>Notifications</h2>
-<p>Les rappels sont générés sur votre appareil. Les alertes de demi-pension (cheval indisponible, nouvelle date de reprise) sont calculées par l'application à partir des données partagées.</p>
+<p>Les rappels sont générés sur votre appareil. Les notifications de demi-pension (demandes de créneau, séances, balades, indisponibilités, notes santé, suivi en direct) sont envoyées par nos serveurs aux seuls utilisateurs concernés par le cheval. Vous pouvez les désactiver dans Notifications.</p>
+
+<h2>Suppression de vos données</h2>
+<p>Vous pouvez supprimer vos chevaux, séances, balades et autres données directement dans l'application, ou désinstaller l'application pour effacer toutes les données locales. Pour supprimer les données de demi-pension hébergées chez Supabase, retirez le partage dans l'application ou écrivez-nous.</p>
 
 <h2>Vos droits (RGPD)</h2>
 <p>Vous disposez d'un droit d'accès, de rectification, de suppression et de portabilité de vos données. Pour l'exercer, écrivez à <a href="mailto:equiriding.app@gmail.com">equiriding.app@gmail.com</a>. Vous pouvez aussi saisir la CNIL (cnil.fr).</p>

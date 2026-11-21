@@ -32,20 +32,36 @@
 <p>You can link your sharing account to Google to recover it on a new phone. EquiRiding then only receives your Google email address, used to identify you. No other access to your Google account is requested.</p>
 
 <h2>Google Drive backup (optional)</h2>
-<p>If enabled, a copy of your data is sent to <strong>your own</strong> Google Drive, in an app-specific folder. EquiRiding has no access to these files. Horses shared with you as a sharer are not backed up.</p>
+<p>If you sign in with Google for backup, a copy of your data (horses, sessions, care, courses, rides) is sent to <strong>your own</strong> Google Drive, in an “EquiRiding” folder. Only your account has access; the app does not read or modify any other file in your Drive. Horses shared with you as a sharer are not backed up.</p>
 
 <h2>Location</h2>
-<p>GPS is only used to record rides and for local weather. Positions stay on your device and are not shared with third parties.</p>
+<p>The app uses your device's location (approximate and precise / GPS) to show local weather, display your position on the map and record the track, distance, speed, gaits and elevation of your rides. Location is only used when you start a ride or check the weather. Positions stay on your device and are not shared with third parties, unless you enable live tracking as described below.</p>
+
+<h2>Live tracking (horse sharing, optional)</h2>
+<p>When a sharer starts a ride on a horse entrusted to them, the app asks whether they want to share their location with the horse's owner. Sharing only happens with their explicit consent, which they can withdraw at any time (at the start of each ride or in the sharing tab). During the ride, their precise location is sent about every 20 seconds to our servers (Supabase, hosted in the European Union) and is visible only to that horse's owner. A banner stays on screen while sharing is active. Positions are deleted at the end of the ride. If the ride was not stopped normally, they are no longer visible after 6 hours and are then deleted automatically. They are not used for any other purpose.</p>
+
+<h2>Background tracking</h2>
+<p>To record a ride with the screen off or the app in the background, EquiRiding uses a foreground service, shown by a notification for the whole duration of tracking.</p>
+
+<h2>Ride safety (optional)</h2>
+<p>If enabled, the app can detect prolonged immobility and offer to alert an emergency contact of your choice. The message, with your last known position, is prepared in your phone's messaging app: you, or someone present, send it. EquiRiding never sends SMS automatically and does not collect the content of these messages. The name and contacts entered for this purpose stay on your device.</p>
+
+<h2>Anonymous usage measurement</h2>
+<p>Each time the app opens, it sends our server (Supabase, EU) an identifier randomly generated at install time, not linked to your identity, together with the date, app version and system (Android or iOS). This is only used to know how many people come back to the app. If you answer the “What's missing?” question, your answer is sent with the same anonymous identifier. Uninstalling the app deletes the identifier.</p>
 
 <h2>Third-party services</h2>
 <ul>
 <li>Weather: Open-Meteo (no personal data, only approximate coordinates).</li>
 <li>Maps: OpenStreetMap.</li>
+<li>Sharing notifications: Firebase Cloud Messaging (Google), which only receives a technical identifier of your device and the notification text.</li>
 <li>Subscriptions: Google Play and the App Store, under their own terms. EquiRiding has no access to your payment details.</li>
 </ul>
 
 <h2>Notifications</h2>
-<p>Reminders are generated on your device. Sharing alerts (horse unavailable, new return date) are computed by the app from the shared data.</p>
+<p>Reminders are generated on your device. Sharing notifications (slot requests, sessions, rides, unavailability, health notes, live tracking) are sent by our servers only to the users involved with the horse. You can turn them off in Notifications.</p>
+
+<h2>Deleting your data</h2>
+<p>You can delete your horses, sessions, rides and other data directly in the app, or uninstall it to erase all local data. To delete horse-sharing data hosted by Supabase, end the sharing in the app or contact us.</p>
 
 <h2>Your rights (GDPR)</h2>
 <p>You have the right to access, rectify, delete and port your data. To exercise it, write to <a href="mailto:equiriding.app@gmail.com">equiriding.app@gmail.com</a>.</p>
